@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7th Orpington Scout Group</title>
+  <style>
+    :root {
+      --purple: #7413dc;
+      --green: #23a950;
+      --dark: #1f1f2e;
+      --light: #f7f5fb;
+      --white: #ffffff;
+      --text: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--purple);
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+    .hero {
+      min-height: 520px;
+      background:
+        linear-gradient(rgba(20, 10, 35, 0.55), rgba(20, 10, 35, 0.55)),
+        url("images/campfire-banner.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 28px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .button-secondary {
+      background: var(--white);
+      color: var(--purple);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .intro h2,
+    .sections h2,
+    .meetings h2,
+    .support h2 {
+      font-size: 2.2rem;
+      color: var(--purple);
+      margin-bottom: 15px;
+    }
+
+    .sections {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .section-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 30px 24px;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--purple);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .age {
+      font-weight: bold;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .meetings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .info-box {
+      background: var(--light);
+      border-radius: 22px;
+      padding: 32px;
+    }
+
+    .info-box ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    .support {
+      text-align: center;
+      background: var(--purple);
+      color: var(--white);
+    }
+
+    .support h2 {
+      color: var(--white);
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 28px 8%;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.95rem;
+      }
+
+      .section-cards,
+      .meetings-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 460px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">7th Orpington Scout Group</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="beavers.html">Beavers</a>
+      <a href="cubs.html">Cubs</a>
+      <a href="scouts.html">Scouts</a>
+      <a href="fundraising.html">Fundraising</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>7th Orpington<br />Scout Group</h1>
+        <p>Skills for life. Adventures for all.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="contact.html">Join Us</a>
+          <a class="button button-secondary" href="fundraising.html">Support Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <h2>Welcome to 7th Orpington</h2>
+      <p>
+        We are a friendly Scout group based in Orpington, offering fun, adventure
+        and skills for life to young people aged 6 to 14. Our Beavers, Cubs and
+        Scouts meet weekly during school term time and enjoy games, challenges,
+        badges, camps and outdoor activities.
+      </p>
+    </section>
+
+    <section class="sections">
+      <h2>Our Sections</h2>
+      <p>Choose a section below to learn more.</p>
+
+      <div class="section-cards">
+        <a class="card" href="beavers.html">
+          <img src="images/beavers.png" alt="Beavers logo" />
+          <h3>Beavers</h3>
+          <p class="age">Ages 6–8</p>
+          <p>Fun, games and new experiences.</p>
+        </a>
+
+        <a class="card" href="cubs.html">
+          <img src="images/cubs.png" alt="Cubs logo" />
+          <h3>Cubs</h3>
+          <p class="age">Ages 8–10½</p>
+          <p>Adventure, skills and teamwork.</p>
+        </a>
+
+        <a class="card" href="scouts.html">
+          <img src="images/scouts.png" alt="Scouts fleur-de-lis logo" />
+          <h3>Scouts</h3>
+          <p class="age">Ages 10½–14</p>
+          <p>Challenge yourself and lead the way.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="meetings">
+      <div class="meetings-grid">
+        <div class="info-box">
+          <h2>Weekly Meetings</h2>
+          <p>We meet during school term time.</p>
+          <ul>
+            <li><strong>Beavers:</strong> add day and time</li>
+            <li><strong>Cubs:</strong> add day and time</li>
+            <li><strong>Scouts:</strong> add day and time</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h2>Skills for Life</h2>
+          <p>
+            Through Scouting, young people build confidence, resilience,
+            independence, teamwork and leadership skills in a safe and supportive
+            environment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="support">
+      <h2>Support Our Group</h2>
+      <p>
+        We are run by volunteers and rely on subscriptions, fundraising and local
+        support to provide great experiences for young people.
+      </p>
+      <br />
+      <a class="button button-secondary" href="fundraising.html">Find out how to help</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 7th Orpington Scout Group. Volunteer-led Scouting in Orpington.</p>
+  </footer>
+</body>
+</html>
