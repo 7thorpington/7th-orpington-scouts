@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fundraising | 7th Orpington Scout Group</title>
+
+  <style>
+    :root {
+      --purple: #7413dc;
+      --green: #23a950;
+      --dark: #061d2b;
+      --light: #f7f5fb;
+      --soft-green: #eef9ef;
+      --white: #ffffff;
+      --text: #263238;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--purple);
+    }
+
+    .logo img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: #1f1f2e;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--purple);
+      border-bottom: 3px solid var(--purple);
+      padding-bottom: 6px;
+    }
+
+    .hero {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+        url("images/fundraising-hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 70px 8%;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero .small-text {
+      font-size: 1.05rem;
+      font-weight: 400;
+      max-width: 560px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--purple);
+      color: var(--white);
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.2s ease;
+      margin-top: 18px;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+    }
+
+    section {
+      padding: 60px 8%;
+    }
+
+    h2 {
+      color: var(--purple);
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .intro-text {
+      max-width: 850px;
+      margin: 0 auto 34px;
+      text-align: center;
+      font-size: 1.08rem;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--light);
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .panel h3 {
+      font-size: 1.7rem;
+      color: var(--purple);
+      margin-bottom: 10px;
+    }
+
+    .easy-logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #12313f;
+      margin-bottom: 18px;
+    }
+
+    .easy-logo span {
+      color: #f0c73a;
+    }
+
+    .easy-layout {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 16px;
+      margin-top: 22px;
+      align-items: flex-start;
+    }
+
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #eadbff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--purple);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .easy-cta {
+      border: 2px dashed #b688f0;
+      border-radius: 22px;
+      padding: 34px 24px;
+      text-align: center;
+      background: rgba(255,255,255,0.65);
+    }
+
+    .easy-cta-icon {
+      font-size: 4rem;
+      color: var(--purple);
+      margin-bottom: 14px;
+    }
+
+    .easy-cta h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .link-note {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #5d4a70;
+    }
+
+    .support-list {
+      background: var(--soft-green);
+    }
+
+    .support-list h3 {
+      color: #08713c;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .support-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .support-item:last-child {
+      border-bottom: none;
+    }
+
+    .support-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #d9f3df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .support-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .thank-you {
+      margin: 0 8% 60px;
+      background: linear-gradient(135deg, #7413dc, #5a0fc2);
+      border-radius: 26px;
+      color: white;
+      padding: 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .thank-you h2 {
+      color: white;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    .thank-you .heart {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: white;
+      color: var(--purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      flex-shrink: 0;
+    }
+
+    .thank-you .button {
+      background: white;
+      color: var(--purple);
+      white-space: nowrap;
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 28px 8%;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 950px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.95rem;
+      }
+
+      .main-grid,
+      .easy-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .thank-you {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .thank-you h2 {
+        text-align: center;
+      }
+
+      .hero {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Scout logo">
+      <span>7th Orpington Scout Group</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="beavers.html">Beavers</a>
+      <a href="cubs.html">Cubs</a>
+      <a href="scouts.html">Scouts</a>
+      <a class="active" href="fundraising.html">Fundraising</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Fundraising</h1>
+
+        <p>
+          Help us provide adventure, skills and opportunities for young people.
+        </p>
+
+        <p class="small-text">
+          We are run by volunteers and rely on subscriptions, fundraising and
+          local support to keep our activities affordable and accessible for all.
+        </p>
+
+        <a class="button" href="#easyfundraising">Support Our Group</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Every Little Helps</h2>
+
+      <p class="intro-text">
+        Your support helps us run camps, activities and events, buy equipment
+        and maintain our meeting space. There are lots of ways you can help make
+        a big difference to our young people.
+      </p>
+
+      <div class="main-grid">
+
+        <div class="panel" id="easyfundraising">
+          <div class="easy-logo"><span>✺</span> easyfundraising</div>
+
+          <div class="easy-layout">
+
+            <div>
+              <h3>Shop Online. Raise Donations. For Free.</h3>
+
+              <p>
+                easyfundraising turns your everyday online shopping into free
+                donations for our group.
+              </p>
+
+              <div class="benefit">
+                <div class="benefit-icon">🛍️</div>
+                <div>
+                  <strong>Shop with thousands of retailers</strong>
+                  <p>Including supermarkets, travel, clothes, gifts and more.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">💜</div>
+                <div>
+                  <strong>It does not cost you anything extra</strong>
+                  <p>The retailer donates to us when you shop as normal.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">👥</div>
+                <div>
+                  <strong>Raise money every time you shop</strong>
+                  <p>Small donations add up and make a real difference.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="easy-cta">
+              <div class="easy-cta-icon">🛍️</div>
+
+              <h3>Support us on easyfundraising</h3>
+
+              <p>
+                It is quick and easy to get started. Search for our group on
+                easyfundraising and start raising free donations today.
+              </p>
+
+              <a class="button" href="#" target="_blank">
+                Visit Our easyfundraising Page
+              </a>
+
+              <p class="link-note">
+                Link coming soon — replace the # in the code with your real link.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="panel support-list">
+          <h3>Other Ways to Support Us</h3>
+
+          <div class="support-item">
+            <div class="support-icon">🎁</div>
+            <div>
+              <strong>Make a Donation</strong>
+              <p>One-off or regular donations help us plan ahead.</p>
+            </div>
+          </div>
+
+          <div class="support-item">
+            <div class="support-icon">👥</div>
+            <div>
+              <strong>Volunteer</strong>
+              <p>We are always looking for extra pairs of hands.</p>
+            </div>
+          </div>
+
+          <div class="support-item">
+            <div class="support-icon">📅</div>
+            <div>
+              <strong>Fundraising Events</strong>
+              <p>Quiz nights, fairs and events are a big part of what we do.</p>
+            </div>
+          </div>
+
+          <div class="support-item">
+            <div class="support-icon">📣</div>
+            <div>
+              <strong>Spread the Word</strong>
+              <p>Tell friends, family and colleagues about our group.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="thank-you">
+      <div class="heart">♡</div>
+
+      <div>
+        <h2>Thank You!</h2>
+        <p>
+          Every bit of support, big or small, helps us give young people skills
+          for life and adventures they will never forget.
+        </p>
+      </div>
+
+      <a class="button" href="contact.html">Get In Touch</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 7th Orpington Scout Group</p>
+  </footer>
+
+</body>
+</html>
