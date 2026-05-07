@@ -1,22 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cubs | 7th Orpington Scout Group</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #263238;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #061d2b;
+      color: white;
+      padding: 16px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('images/cubs-hero.jpg') center/cover no-repeat;
+      min-height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 60px 7%;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 7%;
+    }
+
+    h2 {
+      color: #14702b;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #1f963d;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #061d2b;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Cubs</h1>
+<header>
+  <div><strong>7th Orpington Scout Group</strong></div>
 
-<p>Cubs are young people aged 8 to 10½.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="beavers.html">Beavers</a>
+    <a href="cubs.html">Cubs</a>
+    <a href="scouts.html">Scouts</a>
+  </nav>
+</header>
 
-<p>They take part in games, challenges, badges, outdoor activities and camps.</p>
+<section class="hero">
+  <div>
+    <h1>Cubs</h1>
+    <p>Your adventure continues for ages 8–10½.</p>
+    <a class="button" href="contact.html">Ask About Joining</a>
+  </div>
+</section>
 
-<p>Cubs learn new skills, build confidence, work together and begin to take on more responsibility.</p>
+<section>
+  <h2>About Cubs</h2>
 
-<p><strong>Meeting day/time:</strong> Add your meeting details here.</p>
+  <p>
+    Cubs enjoy games, challenges, badges, camps and
+    outdoor adventures.
+  </p>
 
-<p><a href="index.html">Back to Home</a></p>
+  <p>
+    Cubs learn teamwork, confidence and independence
+    while having lots of fun.
+  </p>
+</section>
+
+<section style="background:#eef9ef;">
+  <h2>What We Do</h2>
+
+  <ul>
+    <li>🧭 Learn new skills</li>
+    <li>⛺ Camping and hiking</li>
+    <li>🏃 Challenges and games</li>
+    <li>🌍 Explore the outdoors</li>
+  </ul>
+</section>
+
+<footer>
+  © 7th Orpington Scout Group
+</footer>
 
 </body>
 </html>
