@@ -6,6 +6,11 @@
   <title>Beavers | 7th Orpington Scout Group</title>
 
   <style>
+    :root {
+      --purple: #7413dc;
+      --dark: #1f1f2e;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -15,18 +20,42 @@
 
     header {
       background: white;
-      color: purple;
-      padding: 16px 7%;
+      padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--purple);
+    }
+
+    .logo img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
     }
 
     nav a {
-      color: white;
+      margin-left: 22px;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--purple);
     }
 
     .hero {
@@ -81,13 +110,18 @@
 <body>
 
 <header>
-  <div><strong>7th Orpington Scout Group</strong></div>
+  <div class="logo">
+    <img src="images/logo.png" alt="Scout logo">
+    <span>7th Orpington Scout Group</span>
+  </div>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="beavers.html">Beavers</a>
     <a href="cubs.html">Cubs</a>
     <a href="scouts.html">Scouts</a>
+    <a href="fundraising.html">Fundraising</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
 </header>
 
