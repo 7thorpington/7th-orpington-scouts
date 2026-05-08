@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Beavers | 7th Orpington Scout Group</title>
 
   <style>
     :root {
       --purple: #7413dc;
+      --purple-dark: #4e0a9f;
       --blue: #0878d7;
-      --blue-dark: #0057a8;
-      --green: #23a950;
+      --green: #168a3a;
       --dark: #061d2b;
-      --light-blue: #eef8ff;
+      --light: #f4edff;
       --white: #ffffff;
       --text: #263238;
     }
@@ -25,8 +25,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
       background: var(--white);
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -39,7 +39,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .logo {
@@ -74,35 +74,42 @@
     }
 
     .hero {
-      min-height: 450px;
+      min-height: 520px;
       background:
-        linear-gradient(rgba(0, 20, 35, 0.48), rgba(0, 20, 35, 0.48)),
+        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
         url("images/beavers-hero.jpg") center/cover no-repeat;
-      color: var(--white);
       display: flex;
       align-items: center;
-      padding: 70px 8%;
+      padding: 80px 8%;
+      color: var(--white);
     }
 
     .hero-content {
-      max-width: 600px;
+      max-width: 650px;
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(3.5rem, 7vw, 6rem);
       line-height: 1;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+    }
+
+    .hero .age {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
 
     .hero p {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
+      max-width: 450px;
     }
 
     .button {
       display: inline-block;
-      background: var(--blue);
+      background: var(--purple);
       color: var(--white);
       padding: 13px 24px;
       border-radius: 999px;
@@ -113,136 +120,297 @@
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.22);
     }
 
     section {
-      padding: 60px 8%;
+      padding: 70px 8%;
     }
 
     h2 {
-      color: var(--blue-dark);
-      font-size: 2rem;
-      margin-bottom: 16px;
+      color: var(--purple);
+      font-size: 2.3rem;
+      margin-bottom: 14px;
+      text-align: center;
     }
 
-    .intro-grid {
+    .intro-text {
+      max-width: 850px;
+      margin: 0 auto 38px;
+      text-align: center;
+      font-size: 1.08rem;
+    }
+
+    .feature-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.9fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+      margin-top: 34px;
     }
 
-    .about-text p {
+    .feature-card {
+      background: var(--light);
+      border-radius: 24px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transition: 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    .feature-icon {
+      font-size: 3.4rem;
+      margin-bottom: 16px;
+      color: var(--purple);
+    }
+
+    .feature-card h3 {
+      color: var(--purple-dark);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .out-about {
+      background: var(--light);
+      border-radius: 30px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.6fr;
+      gap: 36px;
+      align-items: center;
+      margin: 0 8%;
+    }
+
+    .out-about h2 {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .out-about p {
       margin-bottom: 16px;
     }
 
-    .info-card {
-      background: #f5f8ff;
-      border-radius: 22px;
-      padding: 28px;
+    .activity-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .activity-card {
+      min-height: 135px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    }
+
+    .activity-card span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: var(--purple);
+      color: white;
+      font-weight: 800;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 8px;
+      font-size: 0.9rem;
+    }
+
+    .arts {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-arts.jpg");
+    }
+
+    .outdoor-play {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-outdoor-play.jpg");
+    }
+
+    .experiments {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-experiments.jpg");
+    }
+
+    .team-games {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-team-games.jpg");
+    }
+
+    .nature {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-nature.jpg");
+    }
+
+    .cooking {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-cooking.jpg");
+    }
+
+    .music {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-music.jpg");
+    }
+
+    .stories {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/beavers-stories.jpg");
+    }
+
+    .gallery-note {
+      color: var(--purple);
+      text-align: center;
+      font-weight: 800;
+      margin-top: 22px;
+      font-size: 1.1rem;
+    }
+
+    .where-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+      margin-top: 70px;
+    }
+
+    .where-card {
+      background: var(--light);
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .where-card h2 {
+      text-align: left;
+      color: var(--purple);
+    }
+
+    .where-item {
       display: flex;
       gap: 18px;
+      margin: 28px 0;
       align-items: flex-start;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
 
-    .info-icon {
-      width: 62px;
-      height: 62px;
+    .where-icon {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: #eadbff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       flex-shrink: 0;
     }
 
-    .info-card h3 {
-      color: var(--purple);
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
-
-    .what-we-do-wrap {
-      padding-top: 10px;
-    }
-
-    .activity-layout {
-      display: grid;
-      grid-template-columns: 1.7fr 1fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-
-    .activity-panel {
-      background: var(--light-blue);
-      border-radius: 24px;
-      padding: 34px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    }
-
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .activity {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 20px 14px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    }
-
-    .activity span {
+    .where-item strong {
       display: block;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .activity strong {
-      display: block;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-
-    .activity p {
-      font-size: 0.9rem;
+      margin-bottom: 5px;
     }
 
     .photo-card {
       background:
-        linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
         url("images/beavers-hero.jpg") center/cover no-repeat;
-      border-radius: 24px;
-      min-height: 280px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      min-height: 360px;
+      border-radius: 26px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    .cta {
+    .progression-strip {
       margin: 0 8% 60px;
-      background: linear-gradient(135deg, #0057a8, #0878d7);
-      color: var(--white);
-      border-radius: 22px;
-      padding: 30px;
-      display: flex;
-      justify-content: space-between;
+      background: linear-gradient(135deg, #eef9ef, #ffffff);
+      border-radius: 26px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.25fr 1.3fr;
+      gap: 30px;
       align-items: center;
-      gap: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
 
-    .cta h2 {
-      color: var(--white);
+    .progression-strip h2 {
+      color: var(--green);
+      text-align: left;
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+    }
+
+    .progression-path {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .progress-step {
+      color: #888;
+      opacity: 0.55;
+      font-weight: 800;
+    }
+
+    .progress-step.active {
+      color: var(--green);
+      opacity: 1;
+    }
+
+    .progress-icon {
+      display: block;
+      font-size: 2.6rem;
       margin-bottom: 6px;
     }
 
+    .progress-arrow {
+      font-size: 2rem;
+      color: #777;
+    }
+
+    .progress-age {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .cta {
+      margin: 0 8% 70px;
+      background: linear-gradient(135deg, #7413dc, #5a0fc2);
+      color: white;
+      border-radius: 26px;
+      padding: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    .cta h2 {
+      text-align: left;
+      color: white;
+      margin-bottom: 8px;
+    }
+
     .cta .button {
-      background: var(--white);
-      color: var(--blue-dark);
+      background: white;
+      color: var(--purple);
       white-space: nowrap;
     }
 
@@ -254,7 +422,7 @@
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       header {
         flex-direction: column;
         gap: 12px;
@@ -269,13 +437,27 @@
         font-size: 0.95rem;
       }
 
-      .intro-grid,
-      .activity-layout {
+      .feature-grid,
+      .where-grid,
+      .out-about,
+      .progression-strip {
         grid-template-columns: 1fr;
       }
 
-      .activity-grid {
+      .activity-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .progression-path {
         grid-template-columns: 1fr;
+      }
+
+      .progress-arrow {
+        transform: rotate(90deg);
+      }
+
+      .hero {
+        min-height: 380px;
       }
 
       .cta {
@@ -283,8 +465,8 @@
         text-align: center;
       }
 
-      .hero {
-        min-height: 380px;
+      .cta h2 {
+        text-align: center;
       }
     }
   </style>
@@ -313,79 +495,131 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Beavers</h1>
-        <p>Fun, friends and adventures for ages 6–8.</p>
-        <a class="button" href="contact.html">Ask About Joining</a>
+        <div class="age">Aged 6 to 8</div>
+        <p>Make friends. Try new things. Have fun!</p>
+        <a class="button" href="contact.html">Join Us</a>
       </div>
     </section>
 
-    <section class="intro-grid">
-      <div class="about-text">
-        <h2>About Beavers</h2>
-        <p>
-          Beavers are our youngest section and enjoy games, crafts,
-          outdoor activities and making new friends.
-        </p>
-        <p>
-          Young people learn new skills, build confidence and have lots
-          of fun in a safe and welcoming environment.
-        </p>
-      </div>
+    <section>
+      <h2>What Beavers Get Up To</h2>
 
-      <div class="info-card">
-        <div class="info-icon">📍</div>
-        <div>
-          <h3>Where We Meet</h3>
-          <p><strong>Orpington Methodist Church</strong></p>
-          <p>Orpington</p>
-        </div>
-      </div>
+      <p class="intro-text">
+        Beavers is all about fun, adventure and learning new things.
+        We help young people grow in confidence while making friends
+        and exploring the world around them.
+      </p>
 
-      <div class="info-card">
-        <div class="info-icon">📅</div>
-        <div>
-          <h3>When We Meet</h3>
-          <p><strong>Monday</strong></p>
-          <p>17:30 – 18:15</p>
-          <p>During school term time</p>
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🐾</div>
+          <h3>Fun & Adventures</h3>
+          <p>Exciting activities, games and outdoor fun.</p>
         </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Make Friends</h3>
+          <p>Build friendships and learn to work together.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">✋</div>
+          <h3>Try New Things</h3>
+          <p>Discover new skills and find out what you enjoy.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💜</div>
+          <h3>Be Kind</h3>
+          <p>Learn to care for others and make a difference.</p>
+        </div>
+
       </div>
     </section>
 
-    <section class="what-we-do-wrap">
-      <div class="activity-layout">
+    <section class="out-about">
 
-        <div class="activity-panel">
-          <h2>What We Do</h2>
+      <div>
+        <h2>We Love to Learn Through Fun!</h2>
 
-          <div class="activity-grid">
-            <div class="activity">
-              <span>🎨</span>
-              <strong>Crafts and games</strong>
-              <p>Get creative and have fun.</p>
+        <p>
+          Every week is different at Beavers. We play games, get creative,
+          explore outdoors and go on mini-adventures.
+        </p>
+
+        <p>
+          It is a fun and friendly introduction to Scouting, helping young
+          people build confidence one activity at a time.
+        </p>
+      </div>
+
+      <div>
+        <div class="activity-gallery">
+
+          <div class="activity-card arts">
+            <span>Arts & Crafts</span>
+          </div>
+
+          <div class="activity-card outdoor-play">
+            <span>Outdoor Play</span>
+          </div>
+
+          <div class="activity-card experiments">
+            <span>Fun Experiments</span>
+          </div>
+
+          <div class="activity-card team-games">
+            <span>Team Games</span>
+          </div>
+
+          <div class="activity-card nature">
+            <span>Nature Explorer</span>
+          </div>
+
+          <div class="activity-card cooking">
+            <span>Cooking</span>
+          </div>
+
+          <div class="activity-card music">
+            <span>Music & Songs</span>
+          </div>
+
+          <div class="activity-card stories">
+            <span>Stories & Adventures</span>
+          </div>
+
+        </div>
+
+        <p class="gallery-note">
+          ↪ Just some of the activities we enjoy!
+        </p>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="where-grid">
+
+        <div class="where-card">
+          <h2>When & Where</h2>
+
+          <div class="where-item">
+            <div class="where-icon">🕒</div>
+            <div>
+              <strong>Monday Evenings</strong>
+              <p>17:30 – 18:15</p>
+              <p>During school term time</p>
             </div>
+          </div>
 
-            <div class="activity">
-              <span>🌳</span>
-              <strong>Outdoor adventures</strong>
-              <p>Explore, discover and play outside.</p>
-            </div>
-
-            <div class="activity">
-              <span>⛺</span>
-              <strong>Camps and campfires</strong>
-              <p>Sleep under the stars and make memories.</p>
-            </div>
-
-            <div class="activity">
-              <span>🏅</span>
-              <strong>Earn badges</strong>
-              <p>Try new things and celebrate achievements.</p>
-            </div>
-
-            <div class="activity">
-              <span>👥</span>
-              <strong>Make friends</strong>
-              <p>Be part of a team and have fun together.</p>
+          <div class="where-item">
+            <div class="where-icon">📍</div>
+            <div>
+              <strong>Orpington Methodist Church</strong>
+              <p>Sevenoaks Road, Orpington</p>
+              <p>BR6 9JX</p>
             </div>
           </div>
         </div>
@@ -395,13 +629,55 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="progression-strip">
+
       <div>
-        <h2>Interested in joining?</h2>
-        <p>We’d love to welcome you. Get in touch to find out more or arrange a visit.</p>
+        <h2>Growing Every Step of the Way</h2>
+
+        <p>
+          From making new friends as a Beaver, to taking on new challenges
+          as a Cub, and leading adventures as a Scout — every step helps
+          you grow.
+        </p>
+      </div>
+
+      <div class="progression-path">
+
+        <div class="progress-step active">
+          <span class="progress-icon">🦫</span>
+          Beavers
+          <span class="progress-age">6–8 years</span>
+        </div>
+
+        <div class="progress-arrow">→</div>
+
+        <div class="progress-step">
+          <span class="progress-icon">🦊</span>
+          Cubs
+          <span class="progress-age">8–10½ years</span>
+        </div>
+
+        <div class="progress-arrow">→</div>
+
+        <div class="progress-step">
+          <span class="progress-icon">⚜️</span>
+          Scouts
+          <span class="progress-age">10½–14 years</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="cta">
+
+      <div>
+        <h2>Ready for lots of fun and adventure?</h2>
+        <p>Come and see what Beavers is all about!</p>
       </div>
 
       <a class="button" href="contact.html">Contact Us</a>
+
     </section>
 
   </main>
