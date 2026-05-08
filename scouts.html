@@ -9,6 +9,7 @@
     :root {
       --purple: #7413dc;
       --purple-dark: #4e0a9f;
+      --green: #168a3a;
       --dark: #061d2b;
       --light: #f4edff;
       --white: #ffffff;
@@ -72,13 +73,13 @@
     }
 
     .hero {
-      min-height: 430px;
+      min-height: 520px;
       background:
-        linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)),
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
         url("images/scouts-hero.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
-      padding: 70px 8%;
+      padding: 80px 8%;
       color: var(--white);
     }
 
@@ -87,21 +88,22 @@
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(3.5rem, 7vw, 6rem);
       line-height: 1;
       margin-bottom: 14px;
     }
 
     .hero .age {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 800;
       margin-bottom: 14px;
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      max-width: 450px;
     }
 
     .button {
@@ -121,12 +123,12 @@
     }
 
     section {
-      padding: 60px 8%;
+      padding: 70px 8%;
     }
 
     h2 {
       color: var(--purple);
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-bottom: 14px;
       text-align: center;
     }
@@ -148,19 +150,19 @@
     .feature-card {
       background: var(--light);
       border-radius: 24px;
-      padding: 30px 22px;
+      padding: 32px 24px;
       text-align: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       transition: 0.2s ease;
     }
 
     .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
     }
 
     .feature-icon {
-      font-size: 3rem;
+      font-size: 3.4rem;
       margin-bottom: 16px;
     }
 
@@ -170,11 +172,118 @@
       margin-bottom: 10px;
     }
 
+    .out-about {
+      background: var(--light);
+      border-radius: 30px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.6fr;
+      gap: 36px;
+      align-items: center;
+      margin: 0 8%;
+    }
+
+    .out-about h2 {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .out-about p {
+      margin-bottom: 16px;
+    }
+
+    .activity-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .activity-card {
+      min-height: 135px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    }
+
+    .activity-card span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: var(--purple);
+      color: white;
+      font-weight: 800;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 8px;
+      font-size: 0.9rem;
+    }
+
+    .archery {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/archery.jpg");
+    }
+
+    .tomahawk {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/tomahawk.jpg");
+    }
+
+    .climbing {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/climbing.jpg");
+    }
+
+    .expeditions {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/expeditions.jpg");
+    }
+
+    .camping {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/camping.jpg");
+    }
+
+    .firelighting {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/firelighting.jpg");
+    }
+
+    .canoeing {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/canoeing.jpg");
+    }
+
+    .navigation {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/navigation.jpg");
+    }
+
+    .gallery-note {
+      color: var(--purple);
+      text-align: center;
+      font-weight: 800;
+      margin-top: 22px;
+      font-size: 1.1rem;
+    }
+
     .where-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 34px;
       align-items: stretch;
+      margin-top: 70px;
     }
 
     .where-card {
@@ -192,7 +301,7 @@
     .where-item {
       display: flex;
       gap: 18px;
-      margin: 24px 0;
+      margin: 28px 0;
       align-items: flex-start;
     }
 
@@ -222,22 +331,68 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    .cta {
+    .skills-strip {
       margin: 0 8% 60px;
-      background: linear-gradient(135deg, #f4edff, #ffffff);
+      background: linear-gradient(135deg, #eef9ef, #ffffff);
       border-radius: 26px;
       padding: 34px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .skills-strip h2 {
+      color: var(--green);
+      text-align: left;
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+    }
+
+    .skills-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .skills-mini-grid div {
+      border-left: 1px solid rgba(0,0,0,0.15);
+      padding-left: 14px;
+    }
+
+    .mini-icon {
+      display: block;
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      margin: 0 8% 70px;
+      background: linear-gradient(135deg, #7413dc, #5a0fc2);
+      color: white;
+      border-radius: 26px;
+      padding: 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 28px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
 
     .cta h2 {
       text-align: left;
-      color: var(--purple-dark);
+      color: white;
       margin-bottom: 8px;
+    }
+
+    .cta .button {
+      background: white;
+      color: var(--purple);
+      white-space: nowrap;
     }
 
     footer {
@@ -264,12 +419,28 @@
       }
 
       .feature-grid,
-      .where-grid {
+      .where-grid,
+      .out-about,
+      .skills-strip {
         grid-template-columns: 1fr;
       }
 
+      .activity-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-mini-grid div {
+        border-left: none;
+        border-top: 1px solid rgba(0,0,0,0.15);
+        padding-top: 14px;
+      }
+
       .hero {
-        min-height: 340px;
+        min-height: 380px;
       }
 
       .cta {
@@ -350,6 +521,66 @@
       </div>
     </section>
 
+    <section class="out-about">
+
+      <div>
+        <h2>We’re Out & About</h2>
+
+        <p>
+          Although we’re based at Orpington Methodist Church, we’re rarely
+          indoors for long.
+        </p>
+
+        <p>
+          We believe in learning by doing, exploring new places and trying
+          exciting activities throughout the year.
+        </p>
+      </div>
+
+      <div>
+        <div class="activity-gallery">
+
+          <div class="activity-card archery">
+            <span>Archery</span>
+          </div>
+
+          <div class="activity-card tomahawk">
+            <span>Tomahawk Throwing</span>
+          </div>
+
+          <div class="activity-card climbing">
+            <span>Climbing</span>
+          </div>
+
+          <div class="activity-card expeditions">
+            <span>Expeditions</span>
+          </div>
+
+          <div class="activity-card camping">
+            <span>Camping</span>
+          </div>
+
+          <div class="activity-card firelighting">
+            <span>Fire Lighting</span>
+          </div>
+
+          <div class="activity-card canoeing">
+            <span>Canoeing</span>
+          </div>
+
+          <div class="activity-card navigation">
+            <span>Navigation</span>
+          </div>
+
+        </div>
+
+        <p class="gallery-note">
+          Just some of the activities we’ve enjoyed recently!
+        </p>
+      </div>
+
+    </section>
+
     <section>
       <div class="where-grid">
 
@@ -380,13 +611,48 @@
       </div>
     </section>
 
+    <section class="skills-strip">
+
+      <div>
+        <h2>Skills for Now. Skills for Life.</h2>
+
+        <p>
+          From teamwork and communication to resilience and problem solving,
+          Scouts helps you grow in confidence and develop skills that will
+          stay with you for life.
+        </p>
+      </div>
+
+      <div class="skills-mini-grid">
+
+        <div>
+          <span class="mini-icon">⛺</span>
+          Build Confidence
+        </div>
+
+        <div>
+          <span class="mini-icon">🤝</span>
+          Make Friends
+        </div>
+
+        <div>
+          <span class="mini-icon">💡</span>
+          Try New Things
+        </div>
+
+      </div>
+
+    </section>
+
     <section class="cta">
+
       <div>
         <h2>Ready for your next adventure?</h2>
         <p>Come and see what Scouts is all about.</p>
       </div>
 
       <a class="button" href="contact.html">Contact Us</a>
+
     </section>
 
   </main>
