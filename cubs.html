@@ -8,10 +8,11 @@
   <style>
     :root {
       --purple: #7413dc;
+      --purple-dark: #4e0a9f;
       --green: #168a3a;
-      --green-dark: #0f6d2d;
       --dark: #061d2b;
-      --light: #eef9ef;
+      --light: #f4edff;
+      --soft-green: #eef9ef;
       --white: #ffffff;
       --text: #263238;
     }
@@ -73,13 +74,13 @@
     }
 
     .hero {
-      min-height: 430px;
+      min-height: 520px;
       background:
-        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
         url("images/cubs-hero.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
-      padding: 70px 8%;
+      padding: 80px 8%;
       color: var(--white);
     }
 
@@ -88,26 +89,27 @@
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(3.5rem, 7vw, 6rem);
       line-height: 1;
       margin-bottom: 14px;
     }
 
     .hero .age {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 800;
       margin-bottom: 14px;
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      max-width: 500px;
     }
 
     .button {
       display: inline-block;
-      background: var(--green);
+      background: var(--purple);
       color: var(--white);
       padding: 13px 24px;
       border-radius: 999px;
@@ -122,12 +124,12 @@
     }
 
     section {
-      padding: 60px 8%;
+      padding: 70px 8%;
     }
 
     h2 {
       color: var(--purple);
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-bottom: 14px;
       text-align: center;
     }
@@ -149,26 +151,133 @@
     .feature-card {
       background: var(--light);
       border-radius: 24px;
-      padding: 30px 22px;
+      padding: 32px 24px;
       text-align: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       transition: 0.2s ease;
     }
 
     .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
     }
 
     .feature-icon {
-      font-size: 3rem;
+      font-size: 3.4rem;
       margin-bottom: 16px;
+      color: var(--purple);
     }
 
     .feature-card h3 {
-      color: var(--green-dark);
+      color: var(--purple-dark);
       font-size: 1.25rem;
       margin-bottom: 10px;
+    }
+
+    .out-about {
+      background: var(--light);
+      border-radius: 30px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.6fr;
+      gap: 36px;
+      align-items: center;
+      margin: 0 8%;
+    }
+
+    .out-about h2 {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .out-about p {
+      margin-bottom: 16px;
+    }
+
+    .activity-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .activity-card {
+      min-height: 135px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    }
+
+    .activity-card span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: var(--purple);
+      color: white;
+      font-weight: 800;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 8px;
+      font-size: 0.9rem;
+    }
+
+    .campfires {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-campfires.jpg");
+    }
+
+    .forest {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-forest-adventures.jpg");
+    }
+
+    .crafts {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-crafts.jpg");
+    }
+
+    .wide-games {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-wide-games.jpg");
+    }
+
+    .cooking {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-cooking.jpg");
+    }
+
+    .orienteering {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-orienteering.jpg");
+    }
+
+    .team-challenges {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-team-challenges.jpg");
+    }
+
+    .animal-encounters {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
+        url("images/cubs-animal-encounters.jpg");
+    }
+
+    .gallery-note {
+      color: var(--purple);
+      text-align: center;
+      font-weight: 800;
+      margin-top: 22px;
+      font-size: 1.1rem;
     }
 
     .where-grid {
@@ -176,6 +285,7 @@
       grid-template-columns: 0.9fr 1.1fr;
       gap: 34px;
       align-items: stretch;
+      margin-top: 70px;
     }
 
     .where-card {
@@ -193,7 +303,7 @@
     .where-item {
       display: flex;
       gap: 18px;
-      margin: 24px 0;
+      margin: 28px 0;
       align-items: flex-start;
     }
 
@@ -223,22 +333,85 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    .cta {
+    .progression-strip {
       margin: 0 8% 60px;
-      background: linear-gradient(135deg, #eaf8ee, #f6fff8);
+      background: linear-gradient(135deg, #eef9ef, #ffffff);
       border-radius: 26px;
       padding: 34px;
+      display: grid;
+      grid-template-columns: 1.25fr 1.3fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .progression-strip h2 {
+      color: var(--green);
+      text-align: left;
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+    }
+
+    .progression-path {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .progress-step {
+      color: #888;
+      opacity: 0.55;
+      font-weight: 800;
+    }
+
+    .progress-step.active {
+      color: var(--green);
+      opacity: 1;
+    }
+
+    .progress-icon {
+      display: block;
+      font-size: 2.6rem;
+      margin-bottom: 6px;
+    }
+
+    .progress-arrow {
+      font-size: 2rem;
+      color: #777;
+    }
+
+    .progress-age {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .cta {
+      margin: 0 8% 70px;
+      background: linear-gradient(135deg, #7413dc, #5a0fc2);
+      color: white;
+      border-radius: 26px;
+      padding: 36px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 28px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
 
     .cta h2 {
       text-align: left;
-      color: var(--green-dark);
+      color: white;
       margin-bottom: 8px;
+    }
+
+    .cta .button {
+      background: white;
+      color: var(--purple);
+      white-space: nowrap;
     }
 
     footer {
@@ -265,12 +438,26 @@
       }
 
       .feature-grid,
-      .where-grid {
+      .where-grid,
+      .out-about,
+      .progression-strip {
         grid-template-columns: 1fr;
       }
 
+      .activity-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .progression-path {
+        grid-template-columns: 1fr;
+      }
+
+      .progress-arrow {
+        transform: rotate(90deg);
+      }
+
       .hero {
-        min-height: 340px;
+        min-height: 380px;
       }
 
       .cta {
@@ -309,7 +496,7 @@
       <div class="hero-content">
         <h1>Cubs</h1>
         <div class="age">Aged 8 to 10½</div>
-        <p>Making friends, trying new things and having plenty of fun.</p>
+        <p>Learn. Explore. Have fun. All while working together.</p>
         <a class="button" href="contact.html">Join Us</a>
       </div>
     </section>
@@ -318,37 +505,97 @@
       <h2>What Cubs Get Up To</h2>
 
       <p class="intro-text">
-        Cubs is all about adventure and learning new skills. We build confidence,
-        teamwork and independence in a safe and friendly environment.
+        Cubs is all about trying new things, making memories and building
+        the skills and confidence you’ll use for the rest of your life.
       </p>
 
       <div class="feature-grid">
 
         <div class="feature-card">
-          <div class="feature-icon">⛺</div>
-          <h3>Outdoor Adventures</h3>
-          <p>Camping, hikes and exploring the outdoors.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🧭</div>
-          <h3>Skills for Life</h3>
-          <p>Learning practical skills and building confidence.</p>
+          <div class="feature-icon">🔍</div>
+          <h3>Discover & Explore</h3>
+          <p>Explore the outdoors, go on visits and try new things.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon">👥</div>
-          <h3>Teamwork & Fun</h3>
-          <p>Games, challenges and working together.</p>
+          <h3>Teamwork & Friends</h3>
+          <p>Work together, make friends and be part of a team.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🐾</div>
-          <h3>Creative & Active</h3>
-          <p>Creative activities, projects and plenty of action.</p>
+          <div class="feature-icon">🏅</div>
+          <h3>Skills for Life</h3>
+          <p>Learn new skills, earn badges and grow in confidence.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💜</div>
+          <h3>Kindness in Action</h3>
+          <p>Help others, look after our community and have fun doing it.</p>
         </div>
 
       </div>
+    </section>
+
+    <section class="out-about">
+
+      <div>
+        <h2>We’re Active & Always Exploring</h2>
+
+        <p>
+          We love getting outdoors, learning new skills and going on exciting
+          adventures — all while having fun with our friends.
+        </p>
+
+        <p>
+          Cubs sits between Beavers and Scouts, giving young people the chance
+          to take on more responsibility while still having plenty of fun.
+        </p>
+      </div>
+
+      <div>
+        <div class="activity-gallery">
+
+          <div class="activity-card campfires">
+            <span>Campfires</span>
+          </div>
+
+          <div class="activity-card forest">
+            <span>Forest Adventures</span>
+          </div>
+
+          <div class="activity-card crafts">
+            <span>Crafts & Creativity</span>
+          </div>
+
+          <div class="activity-card wide-games">
+            <span>Wide Games</span>
+          </div>
+
+          <div class="activity-card cooking">
+            <span>Cooking</span>
+          </div>
+
+          <div class="activity-card orienteering">
+            <span>Orienteering</span>
+          </div>
+
+          <div class="activity-card team-challenges">
+            <span>Team Challenges</span>
+          </div>
+
+          <div class="activity-card animal-encounters">
+            <span>Animal Encounters</span>
+          </div>
+
+        </div>
+
+        <p class="gallery-note">
+          ↪ Just some of the activities we enjoy!
+        </p>
+      </div>
+
     </section>
 
     <section>
@@ -381,13 +628,54 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="progression-strip">
+
       <div>
-        <h2>Ready to Join Cubs?</h2>
-        <p>We’d love to welcome you along. Get in touch to arrange a visit.</p>
+        <h2>Growing Every Step of the Way</h2>
+
+        <p>
+          From making friends as a Beaver, to building confidence as a Cub,
+          and taking on bigger challenges as a Scout — every step helps you grow.
+        </p>
+      </div>
+
+      <div class="progression-path">
+
+        <div class="progress-step">
+          <span class="progress-icon">🦫</span>
+          Beavers
+          <span class="progress-age">6–8 years</span>
+        </div>
+
+        <div class="progress-arrow">→</div>
+
+        <div class="progress-step active">
+          <span class="progress-icon">🦊</span>
+          Cubs
+          <span class="progress-age">8–10½ years</span>
+        </div>
+
+        <div class="progress-arrow">→</div>
+
+        <div class="progress-step">
+          <span class="progress-icon">⚜️</span>
+          Scouts
+          <span class="progress-age">10½–14 years</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="cta">
+
+      <div>
+        <h2>Ready to join the adventure?</h2>
+        <p>Come along and see what Cubs is all about!</p>
       </div>
 
       <a class="button" href="contact.html">Contact Us</a>
+
     </section>
 
   </main>
