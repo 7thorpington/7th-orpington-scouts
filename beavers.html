@@ -200,15 +200,24 @@
       gap: 14px;
     }
 
-    .activity-card {
-      min-height: 135px;
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.14);
-    }
+   .activity-card {
+    min-height: 135px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.activity-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.activity-card span {
 
     .activity-card span {
       position: absolute;
