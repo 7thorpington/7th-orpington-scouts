@@ -88,19 +88,26 @@
       max-width: 720px;
     }
 
-    .hero h1 {
-      font-size: clamp(4rem, 9vw, 7.8rem);
-      line-height: 0.95;
-      margin-bottom: 22px;
-      text-transform: uppercase;
-      letter-spacing: -2px;
-    }
+   .hero h1 {
+    font-size: clamp(4rem, 9vw, 7.8rem);
+    line-height: 0.95;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
 
-    .hero h1 span {
-      color: var(--purple);
-      display: block;
-    }
+.hero h1 sup {
+    font-size: 0.38em;
+    vertical-align: super;
+    position: relative;
+    top: -0.2em;
+    margin-left: 2px;
+}
 
+.hero h1 span {
+    color: var(--purple);
+    display: block;
+}
  .hero .tagline {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
@@ -600,7 +607,7 @@
 
     <section class="hero">
       <div class="hero-content">
-      <h1>7th <span>Orpington</span></h1>
+      <h1>7<sup>th</sup> <span>Orpington</span></h1>
      <div class="tagline">
   <span>Skills for life.</span>
   <span>Adventures for all.</span>
