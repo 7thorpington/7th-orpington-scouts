@@ -101,16 +101,26 @@
       display: block;
     }
 
-    .hero .tagline {
+ .hero .tagline {
   font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 22px;
-  font-style: italic;
-  line-height: 1.25;
+  font-weight: 800;
+  margin-bottom: 30px;
+  line-height: 1.15;
+  transform: rotate(-2deg);
+  display: inline-block;
 }
 
 .hero .tagline span {
   display: block;
+  font-style: italic;
+}
+
+.tagline-line {
+  width: 180px;
+  height: 8px;
+  background: var(--purple);
+  border-radius: 999px;
+  margin-top: 12px;
 }
 
     .hero p {
